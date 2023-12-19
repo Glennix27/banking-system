@@ -1,9 +1,7 @@
 <template lang="">
-  <div class=""></div>
+  <div>FInance Page</div>
 </template>
 <script>
-export default {
-  methods: {},
-};
+export default {};
 </script>
 <style lang=""></style>
