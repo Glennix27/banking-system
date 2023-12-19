@@ -8,13 +8,15 @@
       </div>
       <div class="btn-cont flex space-x-5 gap-4">
         <router-link
-          class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+          class="text-white rounded-md px-3 py-2 text-sm font-medium"
+          :class="{ 'bg-gray-900': $route.path === '/bank' }"
           aria-current="page"
           to="/bank"
           >Banks</router-link
         >
         <router-link
           class="text-white rounded-md px-3 py-2 text-sm font-medium"
+          :class="{ 'bg-gray-900': $route.path === '/finance' }"
           to="/finance"
           >Finance</router-link
         >
@@ -25,9 +27,12 @@
           @mouseover="showDropdown"
           @mouseleave="hideDropdown"
         >
-          <button class="rounded-full bg-white overflow-hidden w-10">
-            <img src="./assets/logo.png" alt="" />
-          </button>
+          <router-link to="/profile"
+            ><img
+              class="rounded-full bg-white overflow-hidden w-10"
+              src="./assets/logo.png"
+              alt=""
+          /></router-link>
         </div>
         <transition name="fade">
           <div
