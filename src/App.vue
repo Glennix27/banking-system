@@ -8,13 +8,15 @@
       </div>
       <div class="btn-cont flex space-x-5 gap-4">
         <router-link
-          class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+          class="text-white rounded-md px-3 py-2 text-sm font-medium"
+          :class="{ 'bg-gray-900': $route.path === '/bank' }"
           aria-current="page"
           to="/bank"
           >Banks</router-link
         >
         <router-link
           class="text-white rounded-md px-3 py-2 text-sm font-medium"
+          :class="{ 'bg-gray-900': $route.path === '/finance' }"
           to="/finance"
           >Finance</router-link
         >
@@ -34,20 +36,24 @@
             v-show="isDropdownVisible"
             class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
           >
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700"
-              >Settings</a
+            <router-link
+              class="block px-4 py-2 text-sm text-gray-700"
+              to="/setting"
+              >Settings</router-link
             >
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700"
-              >Sign out</a
+
+            <router-link
+              class="block px-4 py-2 text-sm text-gray-700"
+              to="/login"
+              >Sign Out</router-link
             >
           </div>
         </transition>
       </div>
     </div>
   </nav>
-  <div class="container">
-    <router-view></router-view>
-  </div>
+  <router-view class="flex-1"></router-view>
+  <div class="footer bg-gray-800 text-white py-4 sticky-bottom"></div>
 </template>
 
 <script>
